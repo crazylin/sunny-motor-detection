@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworks>net7.0-windows</TargetFrameworks>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Gemini.Modules.OperateToolBox\Gemini.Modules.OperateToolBox.csproj" />
+    <ProjectReference Include="..\Gemini.Modules.Output\Gemini.Modules.Output.csproj" />
+    <ProjectReference Include="..\Gemini.Modules.PropertyToolBox\Gemini.Modules.PropertyToolBox.csproj" />
+    <ProjectReference Include="..\Gemini\Gemini.csproj" />
+    <ProjectReference Include="..\MotorDetection.Daq.NI-DAQ\MotorDetection.Daq.NI-DAQ.csproj" />
+    <ProjectReference Include="..\MotorDetection.Daq\MotorDetection.Daq.csproj" />
+    <ProjectReference Include="..\MotorDetection.Welcome\MotorDetection.Welcome.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33502.453
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gemini", "Gemini\Gemini.csproj", "{0C6A3F66-6E3B-4866-9C77-DBDF1358CB6D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gemini.Modules.OperateToolBox", "Gemini.Modules.OperateToolBox\Gemini.Modules.OperateToolBox.csproj", "{1259FEB6-3478-453B-8932-5C33E6C57F73}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gemini.Modules.Output", "Gemini.Modules.Output\Gemini.Modules.Output.csproj", "{78489211-8AAB-40E6-9F53-BE9FD4D21879}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gemini.Modules.PropertyToolBox", "Gemini.Modules.PropertyToolBox\Gemini.Modules.PropertyToolBox.csproj", "{AD497E45-8EBD-461B-80A9-1DE441D42B0C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Framewroks", "Framewroks", "{03DE94C5-BBDC-4DE4-AD62-4DE38856D2F4}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotorDetection", "MotorDetection\MotorDetection.csproj", "{8F01D37B-F6D7-4566-A700-0F704AB31EDF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Gemini.Modules.Utils", "Gemini.Modules.Utils\Gemini.Modules.Utils.csproj", "{A26FB147-A7F1-4574-8047-158D744B356F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotorDetection.Welcome", "MotorDetection.Welcome\MotorDetection.Welcome.csproj", "{92AD7C6C-0FFC-4A80-BF90-C4716E0F665F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotorDetection.Algorithm", "MotorDetection.Algorithm\MotorDetection.Algorithm.csproj", "{46C9C165-A8E3-4C3A-8814-99A7E8EF838B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotorDetection.Daq", "MotorDetection.Daq\MotorDetection.Daq.csproj", "{274F4840-D023-494A-9C5F-C83C74932874}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MotorDetection.SettingManager", "MotorDetection.SettingManager\MotorDetection.SettingManager.csproj", "{0F5EAA16-9F81-4554-853B-22B5A98CD48E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MotorDetection.Daq.NI-DAQ", "MotorDetection.Daq.NI-DAQ\MotorDetection.Daq.NI-DAQ.csproj", "{B3257621-D1BC-469E-8D6E-7B177D279A03}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0C6A3F66-6E3B-4866-9C77-DBDF1358CB6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C6A3F66-6E3B-4866-9C77-DBDF1358CB6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C6A3F66-6E3B-4866-9C77-DBDF1358CB6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C6A3F66-6E3B-4866-9C77-DBDF1358CB6D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1259FEB6-3478-453B-8932-5C33E6C57F73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1259FEB6-3478-453B-8932-5C33E6C57F73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1259FEB6-3478-453B-8932-5C33E6C57F73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1259FEB6-3478-453B-8932-5C33E6C57F73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78489211-8AAB-40E6-9F53-BE9FD4D21879}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78489211-8AAB-40E6-9F53-BE9FD4D21879}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78489211-8AAB-40E6-9F53-BE9FD4D21879}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78489211-8AAB-40E6-9F53-BE9FD4D21879}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD497E45-8EBD-461B-80A9-1DE441D42B0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD497E45-8EBD-461B-80A9-1DE441D42B0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD497E45-8EBD-461B-80A9-1DE441D42B0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD497E45-8EBD-461B-80A9-1DE441D42B0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F01D37B-F6D7-4566-A700-0F704AB31EDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F01D37B-F6D7-4566-A700-0F704AB31EDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F01D37B-F6D7-4566-A700-0F704AB31EDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F01D37B-F6D7-4566-A700-0F704AB31EDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A26FB147-A7F1-4574-8047-158D744B356F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A26FB147-A7F1-4574-8047-158D744B356F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A26FB147-A7F1-4574-8047-158D744B356F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A26FB147-A7F1-4574-8047-158D744B356F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92AD7C6C-0FFC-4A80-BF90-C4716E0F665F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92AD7C6C-0FFC-4A80-BF90-C4716E0F665F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92AD7C6C-0FFC-4A80-BF90-C4716E0F665F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92AD7C6C-0FFC-4A80-BF90-C4716E0F665F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46C9C165-A8E3-4C3A-8814-99A7E8EF838B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46C9C165-A8E3-4C3A-8814-99A7E8EF838B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46C9C165-A8E3-4C3A-8814-99A7E8EF838B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46C9C165-A8E3-4C3A-8814-99A7E8EF838B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{274F4840-D023-494A-9C5F-C83C74932874}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{274F4840-D023-494A-9C5F-C83C74932874}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{274F4840-D023-494A-9C5F-C83C74932874}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{274F4840-D023-494A-9C5F-C83C74932874}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F5EAA16-9F81-4554-853B-22B5A98CD48E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F5EAA16-9F81-4554-853B-22B5A98CD48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F5EAA16-9F81-4554-853B-22B5A98CD48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F5EAA16-9F81-4554-853B-22B5A98CD48E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3257621-D1BC-469E-8D6E-7B177D279A03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3257621-D1BC-469E-8D6E-7B177D279A03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3257621-D1BC-469E-8D6E-7B177D279A03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3257621-D1BC-469E-8D6E-7B177D279A03}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{0C6A3F66-6E3B-4866-9C77-DBDF1358CB6D} = {03DE94C5-BBDC-4DE4-AD62-4DE38856D2F4}
+		{1259FEB6-3478-453B-8932-5C33E6C57F73} = {03DE94C5-BBDC-4DE4-AD62-4DE38856D2F4}
+		{78489211-8AAB-40E6-9F53-BE9FD4D21879} = {03DE94C5-BBDC-4DE4-AD62-4DE38856D2F4}
+		{AD497E45-8EBD-461B-80A9-1DE441D42B0C} = {03DE94C5-BBDC-4DE4-AD62-4DE38856D2F4}
+		{A26FB147-A7F1-4574-8047-158D744B356F} = {03DE94C5-BBDC-4DE4-AD62-4DE38856D2F4}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CC81F2FA-38DC-405F-B8B3-6A078F94472E}
+	EndGlobalSection
+EndGlobal

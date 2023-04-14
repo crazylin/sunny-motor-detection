@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Absolute_value" xml:space="preserve">
+    <value>Absolute value</value>
+  </data>
+  <data name="Acceleration" xml:space="preserve">
+    <value>Acceleration</value>
+  </data>
+  <data name="Amplitude__V_" xml:space="preserve">
+    <value>Amplitude (V)</value>
+  </data>
+  <data name="Average_number_of_triggers" xml:space="preserve">
+    <value>Average number of triggers</value>
+  </data>
+  <data name="Calibration_value" xml:space="preserve">
+    <value>Calibration value</value>
+  </data>
+  <data name="Channel_name" xml:space="preserve">
+    <value>Channel name</value>
+  </data>
+  <data name="Channel_type" xml:space="preserve">
+    <value>Channel type</value>
+  </data>
+  <data name="Coupling_mode" xml:space="preserve">
+    <value>Coupling mode</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="Device_model" xml:space="preserve">
+    <value>Device model</value>
+  </data>
+  <data name="Device_name" xml:space="preserve">
+    <value>Device name</value>
+  </data>
+  <data name="Device_Select" xml:space="preserve">
+    <value>Device Select</value>
+  </data>
+  <data name="Displacement" xml:space="preserve">
+    <value>Displacement</value>
+  </data>
+  <data name="Enable_trigger" xml:space="preserve">
+    <value>Enable trigger</value>
+  </data>
+  <data name="End_frequency__Hz_" xml:space="preserve">
+    <value>End frequency (Hz)</value>
+  </data>
+  <data name="Engineering_unit" xml:space="preserve">
+    <value>Engineering unit</value>
+  </data>
+  <data name="Falling_edge" xml:space="preserve">
+    <value>Falling edge</value>
+  </data>
+  <data name="Frequency___start_frequency__Hz_" xml:space="preserve">
+    <value>Frequency / start frequency (Hz)</value>
+  </data>
+  <data name="IEPE" xml:space="preserve">
+    <value>IEPE</value>
+  </data>
+  <data name="Input_channel_settings" xml:space="preserve">
+    <value>Input channel settings</value>
+  </data>
+  <data name="Input_voltage_" xml:space="preserve">
+    <value>Input voltage </value>
+  </data>
+  <data name="Lag_length__usually_used_for_hammer_method_" xml:space="preserve">
+    <value>Lag length (usually used for hammer method)</value>
+  </data>
+  <data name="Measure" xml:space="preserve">
+    <value>Measure</value>
+  </data>
+  <data name="Measurement_type" xml:space="preserve">
+    <value>Measurement type</value>
+  </data>
+  <data name="No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="Output_channel_settings" xml:space="preserve">
+    <value>Output channel settings</value>
+  </data>
+  <data name="Output_voltage_" xml:space="preserve">
+    <value>Output voltage </value>
+  </data>
+  <data name="Phase" xml:space="preserve">
+    <value>Phase</value>
+  </data>
+  <data name="Reference" xml:space="preserve">
+    <value>Reference</value>
+  </data>
+  <data name="Refresh_device_list" xml:space="preserve">
+    <value>Refresh device list</value>
+  </data>
+  <data name="Rising_edge" xml:space="preserve">
+    <value>Rising edge</value>
+  </data>
+  <data name="Select_trigger_channel" xml:space="preserve">
+    <value>Select trigger channel</value>
+  </data>
+  <data name="SettingsAcquisitionPageName" xml:space="preserve">
+    <value>Acquisition</value>
+  </data>
+  <data name="SettingsChannelPageGeneral" xml:space="preserve">
+    <value>Channel</value>
+  </data>
+  <data name="SettingTriggerPageGeneral" xml:space="preserve">
+    <value>Trigger</value>
+  </data>
+  <data name="State" xml:space="preserve">
+    <value>State</value>
+  </data>
+  <data name="Time__s_" xml:space="preserve">
+    <value>Time (s)</value>
+  </data>
+  <data name="Trigger_amount" xml:space="preserve">
+    <value>Trigger amount</value>
+  </data>
+  <data name="Trigger_mode_" xml:space="preserve">
+    <value>Trigger mode</value>
+  </data>
+  <data name="Velocity" xml:space="preserve">
+    <value>Velocity</value>
+  </data>
+  <data name="Voltage" xml:space="preserve">
+    <value>Voltage</value>
+  </data>
+  <data name="Waveform_type" xml:space="preserve">
+    <value>Waveform type</value>
+  </data>
+</root>

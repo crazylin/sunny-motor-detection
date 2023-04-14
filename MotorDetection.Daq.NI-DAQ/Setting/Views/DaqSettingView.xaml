@@ -1,0 +1,311 @@
+﻿<UserControl x:Class="MotorDetection.Daq.NI_DAQ.Setting.Views.DaqSettingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MotorDetection.Daq.NI_DAQ.Setting.Views"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             xmlns:l="http://gu.se/Localization"
+             l:ErrorHandling.Mode="ReturnErrorInfoPreserveNeutral"
+             xmlns:converters="clr-namespace:Gemini.Modules.Utils.Converters;assembly=Gemini.Modules.Utils"
+             xmlns:p="clr-namespace:MotorDetection.Daq.NI_DAQ.Properties"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <converters:EnumDescriptionConverter x:Key="EnumDescriptionConverter"></converters:EnumDescriptionConverter>
+        <Style TargetType="{x:Type DataGridCell}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type DataGridCell}">
+                        <Grid Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" Margin="1" />
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="IsEditing" Value="True" />
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="False">
+                    <Setter Property="IsEditing"  Value="False" />
+                </Trigger>
+                <Trigger Property="DataGridCell.IsSelected" Value="True">
+                    <Setter Property="BorderBrush">
+                        <Setter.Value>
+                            <SolidColorBrush Color="Transparent"/>
+                        </Setter.Value>
+                    </Setter>
+                    <Setter Property="Foreground"
+                            Value="{DynamicResource
+                                   {x:Static SystemColors.ControlTextBrushKey}}"/>
+                    <Setter Property="Background">
+                        <Setter.Value>
+                            <SolidColorBrush Color="Transparent"/>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <DockPanel>
+        <DockPanel Dock="Top" Margin="0 3 0 0">
+            <DockPanel LastChildFill="False">
+                <DockPanel Dock="Left">
+                    <Label Content="{l:Static p:Resources.Device_Select}"></Label>
+                </DockPanel>
+                <DockPanel Dock="Left" Margin="3 0 0 0">
+                    <ComboBox ItemsSource="{Binding Devices}" SelectedItem="{Binding SelectedDevice}" Width="200" VerticalContentAlignment="Center">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Name}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </DockPanel>
+                <DockPanel Dock="Left" Margin="3 0 0 0">
+                    <Button Name="RefreshDevices" Content="{l:Static p:Resources.Refresh_device_list}"></Button>
+                </DockPanel>
+                <DockPanel Dock="Left" Margin="3 0 0 0">
+                    <Label Content="{l:Static p:Resources.Device_name}"></Label>
+                </DockPanel>
+                <DockPanel Dock="Left" Margin="3 0 0 0">
+                    <Label Content="{Binding SelectedDevice.DeviceID}"></Label>
+                </DockPanel>
+                <DockPanel Dock="Left" Margin="3 0 0 0">
+                    <Label Content="{l:Static p:Resources.Device_model}"></Label>
+                </DockPanel>
+                <DockPanel Dock="Left" Margin="3 0 0 0">
+                    <Label Content="{Binding SelectedDevice.ProductType}"></Label>
+                </DockPanel>
+            </DockPanel>
+        </DockPanel>
+        <DockPanel Dock="Top" Margin="0 3 0 0">
+            <Label Content="{l:Static p:Resources.Input_channel_settings}"></Label>
+        </DockPanel>
+        <DockPanel Dock="Top" Margin="0 3 0 0">
+            <DataGrid Name="DataGridAIChannel" AutoGenerateColumns ="False" SelectionMode="Single" SelectionUnit="Cell"
+                      CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" EnableRowVirtualization="True" EnableColumnVirtualization="True"
+                      MaxHeight="200" RowHeight="25" ItemsSource="{Binding AiChannelSettings}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="50" Header="{l:Static p:Resources.No}" Binding="{Binding Id}" IsReadOnly="True"></DataGridTextColumn>
+                    <DataGridTemplateColumn Width="50" Header="{l:Static p:Resources.State}" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsOn,UpdateSourceTrigger=PropertyChanged}"></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Channel_name}" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding Name}"></Label>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Width="1*" Header="{l:Static p:Resources.Description}" Binding="{Binding Description,UpdateSourceTrigger=PropertyChanged}"></DataGridTextColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Measurement_type}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding AIMeasurementType,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding AIMeasurementTypes}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}"></TextBlock>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding AIMeasurementType,Converter={StaticResource EnumDescriptionConverter}}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Input_voltage_}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding VoltageRng,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding VoltageRngs}"></ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding VoltageRng}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Coupling_mode}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding AICoupling,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding AICouplings}"></ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding AICoupling}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Engineering_unit}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding MeasurementUnit,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding MeasurementUnits}"></ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding MeasurementUnit}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Calibration_value}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <xctk:DoubleUpDown Value="{Binding Calibration,UpdateSourceTrigger=PropertyChanged}" ShowButtonSpinner="False"></xctk:DoubleUpDown>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Calibration}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+        <DockPanel Dock="Top" Margin="0 3 0 0">
+            <Label Content="{l:Static p:Resources.Output_channel_settings}"></Label>
+        </DockPanel>
+        <DockPanel Dock="Top" Margin="0 3 0 0">
+            <DataGrid AutoGenerateColumns ="False" SelectionMode="Single"
+                      CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeRows="False" CanUserSortColumns="False" EnableRowVirtualization="True" EnableColumnVirtualization="True"
+                      MaxHeight="150" RowHeight="25" ItemsSource="{Binding AoChannelSettings}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Width="50" Header="{l:Static p:Resources.No}" Binding="{Binding Id}" IsReadOnly="True"></DataGridTextColumn>
+                    <DataGridTemplateColumn Width="50" Header="{l:Static p:Resources.State}" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsOn,UpdateSourceTrigger=PropertyChanged}"></CheckBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Channel_name}" >
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Label Content="{Binding Name}"></Label>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Output_voltage_}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding VoltageRng,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding VoltageRngs}"></ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding VoltageRng}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Waveform_type}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding SignalGeneratorType,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding SignalGeneratorTypes}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}"></TextBlock>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SignalGeneratorType,Converter={StaticResource EnumDescriptionConverter}}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="是否扫频" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox SelectedItem="{Binding SweepMode,UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding SweepModes}">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Converter={StaticResource EnumDescriptionConverter}}"></TextBlock>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                                </ComboBox>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SweepMode,Converter={StaticResource EnumDescriptionConverter}}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Time__s_}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <xctk:DoubleUpDown Value="{Binding SweepTime,UpdateSourceTrigger=PropertyChanged}" ShowButtonSpinner="False"></xctk:DoubleUpDown>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding SweepTime}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Frequency___start_frequency__Hz_}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <xctk:DoubleUpDown Value="{Binding Frequency,UpdateSourceTrigger=PropertyChanged}" ShowButtonSpinner="False"></xctk:DoubleUpDown>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Frequency}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.End_frequency__Hz_}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <xctk:DoubleUpDown Value="{Binding FrequencyEnd,UpdateSourceTrigger=PropertyChanged}" ShowButtonSpinner="False"></xctk:DoubleUpDown>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding FrequencyEnd}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Amplitude__V_}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <xctk:DoubleUpDown Value="{Binding Amplitude,UpdateSourceTrigger=PropertyChanged}" ShowButtonSpinner="False"></xctk:DoubleUpDown>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Amplitude}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="1*" Header="{l:Static p:Resources.Phase}" >
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <xctk:DoubleUpDown Value="{Binding Phase,UpdateSourceTrigger=PropertyChanged}" ShowButtonSpinner="False"></xctk:DoubleUpDown>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Phase}"></TextBlock>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </DockPanel>
+    </DockPanel>
+</UserControl>
