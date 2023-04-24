@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using Caliburn.Micro;
 using MotorDetection.Algorithm;
 using MotorDetection.Daq.Models;
 using MotorDetection.Daq.NI_DAQ.Models;

@@ -12,8 +12,4 @@
     <PackageReference Include="Caliburn.Micro.Core" Version="4.0.210" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\Gemini.Modules.Utils\Gemini.Modules.Utils.csproj" />
-  </ItemGroup>
-
 </Project>
