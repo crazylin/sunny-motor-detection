@@ -11,7 +11,11 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using Gemini.Modules.MainWindow.ViewModels;
+using Gemini.Modules.MainWindow.Views;
 using Gemini.Modules.Settings.Views;
+using Gemini.Modules.Shell.Views;
+using MathNet.Filtering.Windowing;
 
 namespace MotorDetection
 {
@@ -26,7 +30,6 @@ namespace MotorDetection
 
             Shell.ShowFloatingWindowsInTaskbar = true;
             Shell.ToolBars.Visible = true;
-
             //MainWindow.Icon = _resourceManager.GetBitmap("Resources/Images/sglogo-32.jpg", Assembly.GetExecutingAssembly().GetName().Name);
 
             //MainWindow.WindowState = WindowState.Maximized;
@@ -35,6 +38,7 @@ namespace MotorDetection
 
             MainWindow.Width = 1200;
             MainWindow.Height = 900;
+         
 
             Shell.StatusBar.AddItem($"欢迎使用 MotorDetection 软件", new GridLength(1, GridUnitType.Star));
             Shell.StatusBar.AddItem("", new GridLength(200));
@@ -52,6 +56,7 @@ namespace MotorDetection
                 ((SettingsView)e.View).Width = 980;
             };
 
+            ((MainWindowView)((MainWindowViewModel)MainWindow).GetView()).Visibility = Visibility.Hidden;
         }
     }
 }
